@@ -6,30 +6,27 @@
 
 body {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2em;
+  min-height: 100vh;
   font-family: "Inter", sans-serif;
   background: #333;
-  font-size: 1rem;
   color: white;
 }
 
-.settings {
-
+.counter-app {
+  position: relative;
 }
 
 div.app-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: #222;
   border-radius: 0.5em;
   box-shadow: 6px 6px 3px black;
-  justify-items: center;
   overflow: hidden;
+  z-index: 100;
 }
 
 .image-section {
@@ -40,6 +37,7 @@ div.app-body {
   background-image: url("default.jpg");
   background-size: cover;
   background-position: center;
+  z-index: 100;
 }
 
 .settings-btn {
@@ -51,6 +49,50 @@ div.app-body {
   height: 40px;
   margin: 10px;
   border-radius: 0.5em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.settings-btn:hover {
+  background: #f9f9f9;
+  color: #333;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 400px;
+  border-radius: 0.5em;
+  background: #222;
+  padding: 1em;
+  opacity: 0;
+  transition: transform .5s, opacity .5s;
+  /* border: 1px red solid; */
+}
+
+.active {
+  transform: translateX(430px);
+  opacity: 1;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em 1.5em;
+  margin: 0.5em 0;
+}
+
+.save {
+  padding: 0.5em;
+  background: #333;
+  /* color: white; */
+  border-radius: 0.5em;
+  border: white 2px solid;
+  color: white;
 }
 
 img {
@@ -60,17 +102,17 @@ img {
   border-radius: 0.5em 0.5em 0 0;
 }
 
-h2 {
+h2.bold {
   padding: 2em 0 2em 0;
 }
 
-div.counter {
+.counter-section {
   display: flex;
   justify-content: space-evenly;
   padding: 0 0 2em 0;
   align-items: center;
   width: 20em;
-  font-size: 1.5rem ;
+  font-size: 1.5rem;
 }
 
 .card {
