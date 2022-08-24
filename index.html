@@ -18,37 +18,57 @@
     ></script>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="settings active">
+      <h2>Ustawienia:</h2>
 
+      <label for="event-name">Event</label>
+      <input type="text" id="event-name" value="" />
+      <table class="date">
+        <tr>
+          <td><label for="year">Year:</label></td>
+          <td><label for="month">Month:</label></td>
+          <td><label for="day">Day:</label></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="year" /></td>
+          <td><input type="text" id="month" /></td>
+          <td><input type="text" id="day" /></td>
+        </tr>
+
+        <label for="event-image">Link do obrazka:</label>
+        <input type="text" id="event-image" value="default.jpg" />
+        <button class="save">Zapisz</button>
+      </table>
+    </div>
+
+    <div class="app-body">
       <div class="image-section">
         <div class="settings-btn"><i class="fas fa-sliders-h"></i></div>
-        <img src="https://cdn.pixabay.com/photo/2022/08/10/18/57/lake-7377942_960_720.jpg" alt="imgage" width="640px" height="250px"/>
       </div>
-      
-      <h1 class="bold">Nowa data za:</h1>
+
+      <h2 class="bold">Nowa data za:</h2>
 
       <div class="counter">
         <div class="card">
           <p class="days-count number">0</p>
           <p class="card-title">Dni</p>
         </div>
-        
+
         <div class="card">
           <p class="hours-count number">0</p>
           <p class="card-title">Godzin</p>
         </div>
-        
+
         <div class="card">
           <p class="minutes-count number">0</p>
           <p class="card-title">Minut</p>
         </div>
-        
+
         <div class="card">
           <p class="seconds-count number">0</p>
           <p class="card-title">Sekund</p>
         </div>
       </div>
-    
     </div>
     <script src="./script.js"></script>
   </body>
