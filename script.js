@@ -21,12 +21,10 @@ const setTime = () => {
   const currentTime = new Date();
   const result = usersTime - currentTime;
 
-  const days = Math.floor(result / 84400000);
-  const hours = Math.floor(result / 3600000 - days * 24);
-  const minutes = Math.floor(result / 60000 - days * 1440 - hours * 60);
-  const seconds = Math.floor(
-    result / 1000 - days * 86400 - hours * 3600 - minutes * 60
-  );
+  const days = Math.floor(result / 1000 / 60 / 60 / 24);
+  const hours = Math.floor(result / 1000 / 60 / 60) % 24;
+  const minutes = Math.floor(result / 1000 / 60) % 60;
+  const seconds = Math.floor(result / 1000) % 60;
 
   daysCount.textContent = days;
   hoursCount.textContent = hours;
@@ -35,7 +33,7 @@ const setTime = () => {
 };
 
 const appUpdate = () => {
-  eventInfo.textContent = `${settingsEventName.value} już za:`;
+  eventInfo.textContent = `There will be a ${settingsEventName.value} in that much time:`;
   imageSection.style.backgroundImage = `url(${settingsImage.value})`;
 
   usersTime = new Date(
